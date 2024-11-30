@@ -1,0 +1,43 @@
+#saborGourmetLogo {
+    height: 5em;
+}
+
+.nav-wrapper {
+    height: auto;
+    display: flex;
+}
+
+nav {
+    background-color: #8B0000;
+}
+
+a {
+    font-family: "Playfair Display", serif;
+}
+
+#pageTitle {
+    margin-left: 100px;
+}
+
+#bannerGourmet {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+small { 
+    display: block; 
+    text-align: right; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px; 
+    font-size: 0.8em;
+    opacity: 0.4;
+}
+
+#guardarReserva {
+    margin-top: 50px;
+}
+
+#nav-mobile {
+    margin-left: 250px;
+}

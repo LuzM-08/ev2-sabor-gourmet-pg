@@ -13,13 +13,19 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Reservas {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nomCliente;
     private String apeCliente;
     private String fecha;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "reservas", cascade = CascadeType.ALL)
+    /*
+     * @OneToMany(fetch = FetchType.LAZY, mappedBy = "reservas", cascade =
+     * CascadeType.ALL)
+     * private List<Mesas> mesas;
+     */
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "reservas", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private List<Mesas> mesas;
 
     public Reservas(String nomCliente, String apeCliente, String fecha) {
@@ -70,6 +76,5 @@ public class Reservas {
     public void setMesas(List<Mesas> mesas) {
         this.mesas = mesas;
     }
-
 
 }

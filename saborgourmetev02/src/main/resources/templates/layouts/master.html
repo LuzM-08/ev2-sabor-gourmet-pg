@@ -1,29 +1,59 @@
 <!DOCTYPE html>
-  <html lang="es"
+<html
+  lang="es"
   xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" th:href="@{css/materialize.min.css}"  media="screen,projection"/>
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      th:href="@{/css/materialize.min.css}"
+      media="screen,projection"
+    />
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
 
-    <body>
-        <nav>
-            <div class="nav-wrapper">
-              <a th:href="@{/}" class="brand-logo center">Sabor Gourmet</a>
-            </div>
-          </nav>
-<div class="rown center-align" layout:fragment="page-content"></div>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+
+  <body>
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a th:href="@{/}" class="brand-logo left valign-wrapper" id="pageTitle"
+          >Sabor Gourmet</a
+        >
+        <img id="saborGourmetLogo" th:src="@{/imgs/icono-home-small.png}" alt="" />
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a th:href="@{/reservas}">Ver reservas</a></li>
+          <li><a th:href="@{/mesas}">Ver mesas</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="rown center-align" layout:fragment="page-content">
 
 
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="@{js/materialize.min.js}"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script layout:fragment="javascript"></script>
-    </body>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script
+      type="text/javascript"
+      th:src="@{\js\materialize.min.js}"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script layout:fragment="javascript"></script>
+  </body>
 </html>
