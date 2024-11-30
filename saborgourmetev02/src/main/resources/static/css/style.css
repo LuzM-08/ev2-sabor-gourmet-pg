@@ -32,4 +32,12 @@ small {
     margin-right: 5px; 
     font-size: 0.8em;
     opacity: 0.4;
- }
+}
+
+#guardarReserva {
+    margin-top: 50px;
+}
+
+#nav-mobile {
+    margin-left: 250px;
+}

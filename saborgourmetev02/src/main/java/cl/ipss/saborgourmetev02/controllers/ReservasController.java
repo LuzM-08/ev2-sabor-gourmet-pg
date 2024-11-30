@@ -48,9 +48,19 @@ public class ReservasController {
   // Editar Reserva
   @GetMapping("/editar/{id}")
   public String editarReserva(@PathVariable Long id, Model model) {
+    Reservas reserva = reservasService.obtenerPorId(id);
+    if (reserva == null) {
+        throw new IllegalArgumentException("Reserva no encontrada");
+    }
+    model.addAttribute("reservas", reserva);
+    return "reservas-agregar"; // Nombre de la plantilla Thymeleaf
+}
+
+  /* @GetMapping("/editar/{id}")
+  public String editarReserva(@PathVariable Long id, Model model) {
     model.addAttribute("serie", reservasService.obtenerPorId(id));
     return "reservas-agregar";
-  }
+  } */
 
   // Eliminar Reserva
   @GetMapping("/eliminar/{id}")
